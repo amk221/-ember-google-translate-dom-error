@@ -1,22 +1,16 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
-import truncate from '../utils/truncate';
 
 export default Controller.extend({
-  text: 'Lorem ipsum http://emberjs.com',
-  limit: 5,
+  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 
-  displayText: computed('text', 'limit', 'viewMore', function() {
-    if (this.viewMore) {
-      return this.text;
-    } else {
-      return truncate(this.text, this.limit);
-    }
+  words: computed('text', function() {
+    return this.text.split(' ');
   }),
 
   actions: {
-    viewMore() {
-      this.set('viewMore', true);
+    viewWords() {
+      this.set('viewWords', true);
     }
   }
 });

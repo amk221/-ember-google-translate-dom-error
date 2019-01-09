@@ -1,5 +1,11 @@
-<WrapUrls @text={{this.displayText}} />
+{{#if this.viewWords}}
+  {{#each this.words as |word|}}
+    {{word}}<br>
+  {{/each}}
+{{else}}
+  {{this.text}}
+{{/if}}
 
 <br><br>
 
-<button onclick={{action "viewMore"}}>View more</button>
+<button onclick={{action "viewWords"}}>View words</button>
