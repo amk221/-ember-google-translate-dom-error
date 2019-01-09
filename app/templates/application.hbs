@@ -1,11 +1,9 @@
-{{#if this.viewWords}}
-  {{#each this.words as |word|}}
-    {{word}}<br>
-  {{/each}}
+{{#if this.viewMore}}
+  After: {{this.text~}}
 {{else}}
-  {{this.text}}
+  Before: {{this.text~}}
 {{/if}}
 
 <br><br>
 
-<button onclick={{action "viewWords"}}>View words</button>
+<button onclick={{action "viewMore"}}>View more</button>
